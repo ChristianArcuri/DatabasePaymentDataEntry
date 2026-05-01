@@ -1,0 +1,80 @@
+﻿CREATE TABLE [dbo].[WebAgent_WireInPreparation] (
+    [PreparationId]          UNIQUEIDENTIFIER NOT NULL,
+    [WebAgentUserId]         INT              NULL,
+    [ChannelId]              INT              CONSTRAINT [DF_WebAgent_WireInPreparation_ChannelId] DEFAULT ((1)) NULL,
+    [SenderId]               INT              CONSTRAINT [DF_WebAgent_WireInPreparation_SenderId] DEFAULT ((0)) NULL,
+    [SameSenderId]           INT              CONSTRAINT [DF_WebAgent_WireInPreparation_SameSenderId] DEFAULT ((0)) NULL,
+    [AcumLoyaltyPoints]      BIT              CONSTRAINT [DF_WebAgent_WireInPreparation_AcumLoyaltyPoints] DEFAULT ((0)) NULL,
+    [AgSenderCode]           VARCHAR (10)     CONSTRAINT [DF_WebAgent_WireInPreparation_AgSenderCode] DEFAULT ('') NULL,
+    [AgSenderId]             INT              CONSTRAINT [DF_WebAgent_WireInPreparation_AgSenderId] DEFAULT ((0)) NULL,
+    [OriAmount]              MONEY            CONSTRAINT [DF_WebAgent_WireInPreparation_OriAmount] DEFAULT ((0)) NULL,
+    [DestCountry]            VARCHAR (40)     CONSTRAINT [DF_WebAgent_WireInPreparation_DestCountry] DEFAULT ('') NULL,
+    [DestCurrency]           CHAR (3)         CONSTRAINT [DF_WebAgent_WireInPreparation_DestCurrency] DEFAULT ('') NULL,
+    [FXAmount]               MONEY            CONSTRAINT [DF_WebAgent_WireInPreparation_FXAmount] DEFAULT ((0)) NULL,
+    [DestAmount]             MONEY            CONSTRAINT [DF_WebAgent_WireInPreparation_DestAmount] DEFAULT ((0)) NULL,
+    [FeeAmount]              MONEY            CONSTRAINT [DF_WebAgent_WireInPreparation_FeeAmount] DEFAULT ((0)) NULL,
+    [StateTax]               MONEY            CONSTRAINT [DF_WebAgent_WireInPreparation_StateTax] DEFAULT ((0)) NULL,
+    [SndCommissionAmount]    MONEY            CONSTRAINT [DF_WebAgent_WireInPreparation_SndCommissionAmount] DEFAULT ((0)) NULL,
+    [FeePlanID]              INT              CONSTRAINT [DF_WebAgent_WireInPreparation_FeePlanID] DEFAULT ((0)) NULL,
+    [CommPlanID]             INT              CONSTRAINT [DF_WebAgent_WireInPreparation_CommPlanID] DEFAULT ((0)) NULL,
+    [RatePlanID]             INT              CONSTRAINT [DF_WebAgent_WireInPreparation_RatePlanID] DEFAULT ((0)) NULL,
+    [FXDif]                  MONEY            CONSTRAINT [DF_WebAgent_WireInPreparation_FXDif] DEFAULT ((0)) NULL,
+    [FXShareId]              INT              CONSTRAINT [DF_WebAgent_WireInPreparation_FXShareId] DEFAULT ((0)) NULL,
+    [FXPointsAdded]          MONEY            CONSTRAINT [DF_WebAgent_WireInPreparation_FXPointsAdded] DEFAULT ((0)) NULL,
+    [FXChangeCost]           MONEY            CONSTRAINT [DF_WebAgent_WireInPreparation_FXChangeCost] DEFAULT ((0)) NULL,
+    [FXCostApplyTo]          CHAR (1)         CONSTRAINT [DF_WebAgent_WireInPreparation_FXCostApplyTo] DEFAULT ('') NULL,
+    [CRMPromotionId]         INT              CONSTRAINT [DF_WebAgent_WireInPreparation_CRMPromotionId] DEFAULT ((0)) NULL,
+    [DiscountAmount]         MONEY            CONSTRAINT [DF_WebAgent_WireInPreparation_DiscountAmount] DEFAULT ((0)) NULL,
+    [PromoCostToCompany]     MONEY            CONSTRAINT [DF_WebAgent_WireInPreparation_PromoCostToCompany] DEFAULT ((0)) NULL,
+    [PromoCostToAgent]       MONEY            CONSTRAINT [DF_WebAgent_WireInPreparation_PromoCostToAgent] DEFAULT ((0)) NULL,
+    [PromoCostToPayer]       MONEY            CONSTRAINT [DF_WebAgent_WireInPreparation_PromoCostToPayer] DEFAULT ((0)) NULL,
+    [WiresAlreadyCountGUID]  UNIQUEIDENTIFIER NULL,
+    [SenderPromoUniqueKey]   VARCHAR (20)     CONSTRAINT [DF_WebAgent_WireInPreparation_SenderPromoUniqueKey] DEFAULT ('') NULL,
+    [WirePoints]             INT              CONSTRAINT [DF_WebAgent_WireInPreparation_WirePoints] DEFAULT ((0)) NULL,
+    [WirePointsSign]         INT              CONSTRAINT [DF_WebAgent_WireInPreparation_WirePointsSign] DEFAULT ((1)) NULL,
+    [ComplianceHitsFound]    BIT              CONSTRAINT [DF_WebAgent_WireInPreparation_ComplianceHitsFound] DEFAULT ((0)) NULL,
+    [Created]                DATETIME         CONSTRAINT [DF__WebAgent___Creat__29AC2CE0] DEFAULT (getdate()) NULL,
+    [AgPayerIdRequirementId] INT              CONSTRAINT [DF__WebAgent___AgPay__6C390A4C] DEFAULT ((0)) NULL,
+    [WireReplacementType]    INT              DEFAULT ((0)) NULL,
+    [ReplacedControl]        INT              DEFAULT ((0)) NULL,
+    [Electronic1025]         BIT              DEFAULT ((0)) NULL,
+    [FXPayerCode]            VARCHAR (10)     NULL,
+    [LegalEntityCode]        VARCHAR (10)     NULL,
+    [OtherChg]               MONEY            DEFAULT ((0)) NULL,
+    [CreditLimitCheckResult] INT              NULL,
+    [DeviceFingerprint]      VARCHAR (50)     NULL,
+    [IPDetectedState]        VARCHAR (40)     DEFAULT ('') NULL,
+    [WireIPAddress]          VARCHAR (50)     DEFAULT ('') NULL,
+    [ComplianceGuidId]       UNIQUEIDENTIFIER NULL,
+    [SenderPaymentMethodId]  INT              DEFAULT ((0)) NULL,
+    [PartnerId]              INT              DEFAULT ((1)) NULL,
+    [TranTypeId]             INT              DEFAULT ((0)) NULL,
+    [DeliveryType]           CHAR (1)         DEFAULT ('') NULL,
+    [StyleId]                INT              DEFAULT ((0)) NULL,
+    [OriCountryAbbr]         CHAR (3)         NULL,
+    [OriCurrency]            CHAR (3)         NULL,
+    [OriStateAbbr]           CHAR (3)         NULL,
+    [ReceiverBankAccountId]  INT              NULL,
+    [AgPayerId]              INT              NULL,
+    [AgPayerCode]            CHAR (10)        NULL,
+    [ReceiverId]             INT              NULL,
+    [DestState]              VARCHAR (50)     NULL,
+    [DestCity]               VARCHAR (50)     NULL,
+    [PromoCode]              VARCHAR (30)     NULL,
+    [BranchId]               INT              NULL,
+    [UserPaymentMethodId]    INT              NULL,
+    [DeptBankAdditionalInfo] VARCHAR (60)     NULL,
+    CONSTRAINT [PK_WebAgent_WireInPreparation] PRIMARY KEY NONCLUSTERED ([PreparationId] ASC)
+);
+
+
+
+
+
+
+
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IX_WebAgent_WireInPreparation_PreparationId]
+    ON [dbo].[WebAgent_WireInPreparation]([PreparationId] ASC);
+

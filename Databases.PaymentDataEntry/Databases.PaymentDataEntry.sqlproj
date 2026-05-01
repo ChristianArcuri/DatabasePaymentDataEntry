@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Databases.PaymentDataEntry</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{e237b1a1-9301-4254-bbe7-66252ce8f5be}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath />
+    <RootNamespace>Databases.PaymentDataEntry</RootNamespace>
+    <AssemblyName>Databases.PaymentDataEntry</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\WiresToFax.sql" />
+    <Build Include="dbo\Tables\ProcessedWires.sql" />
+    <Build Include="dbo\Tables\BridgeProcessNow.sql" />
+    <Build Include="dbo\Tables\Senders.sql" />
+    <Build Include="dbo\Tables\WebAgent_WireFraudCheck.sql" />
+    <Build Include="dbo\Tables\CardDirectProcessLog.sql" />
+    <Build Include="dbo\Tables\AppTokenErrors.sql" />
+    <Build Include="dbo\Tables\Debug.sql" />
+    <Build Include="dbo\Tables\WebAgent_WireInPreparation_FXDetail.sql" />
+    <Build Include="dbo\Tables\Card_CenPosResultCodes.sql" />
+    <Build Include="dbo\Tables\webagent_FraudCheckReasonCodes.sql" />
+    <Build Include="dbo\Tables\TEST.sql" />
+    <Build Include="dbo\Tables\WebAgent_InstantACHParameters.sql" />
+    <Build Include="dbo\Tables\ConnLog.sql" />
+    <Build Include="dbo\Tables\Card_CenPosResults_WS.sql" />
+    <Build Include="dbo\Tables\CardChargeResult.sql" />
+    <Build Include="dbo\Tables\WiresTAGCompChecked.sql" />
+    <Build Include="dbo\Tables\ErrorLog.sql" />
+    <Build Include="dbo\Tables\WiresTAG.sql" />
+    <Build Include="dbo\Tables\ImxDirect_PerformanceLog.sql" />
+    <Build Include="dbo\Tables\CRM_WirePointsRedeemptionToProcess.sql" />
+    <Build Include="dbo\Tables\ImxDirect_SignedDataErrorLog.sql" />
+    <Build Include="dbo\Tables\PayerAcumPopUpLog.sql" />
+    <Build Include="dbo\Tables\WebAgent_WireInPreparation.sql" />
+    <Build Include="dbo\Tables\CRM_RedeemErrors.sql" />
+    <Build Include="dbo\Tables\TempCEPOS.sql" />
+    <Build Include="dbo\Tables\TEMP_Token.sql" />
+    <Build Include="dbo\Tables\Card_CenPosResults.sql" />
+    <Build Include="dbo\Tables\WebAgent_WireGeolocationInfo.sql" />
+    <Build Include="dbo\Tables\QA_OTP.sql" />
+    <Build Include="dbo\Tables\WiresCFPBLog.sql" />
+    <Build Include="dbo\Tables\WebAgent_WireInPreparation_ValidationsDone.sql" />
+    <Build Include="dbo\Tables\ErrorLogCD.sql" />
+    <Build Include="dbo\Tables\Card_CenposKioskResults.sql" />
+    <Build Include="dbo\Tables\CashdirectAppServers.sql" />
+    <Build Include="dbo\Tables\Receivers.sql" />
+    <Build Include="dbo\Tables\FAlert.sql" />
+    <Build Include="dbo\Tables\WebAgent_CleanPreparations.sql" />
+    <Build Include="dbo\Tables\WebAgent_WireInPreparation_Branches_failing.sql" />
+    <Build Include="dbo\Tables\OutboxRecord.sql" />
+    <Build Include="dbo\Tables\RepCheck.sql" />
+    <Build Include="dbo\Tables\SP_WireLog.sql" />
+    <Build Include="dbo\Tables\ImxDirect_WirePricingInfo.sql" />
+    <Build Include="dbo\Tables\WebAgent_WireInPreparation_Branches_old.sql" />
+    <Build Include="dbo\Tables\Wires.sql" />
+    <Build Include="dbo\Tables\WebAgent_WireInPreparation_Branches.sql" />
+    <Build Include="dbo\Tables\ImxDirect_WireInPreparation.sql" />
+    <Build Include="dbo\Tables\BanamexWires.sql" />
+    <Build Include="dbo\Tables\SyncErrorLog.sql" />
+    <Build Include="dbo\Tables\ImxDirect_WireCFPBLog.sql" />
+    <Build Include="dbo\Tables\WirePossibleFraud.sql" />
+    <Build Include="dbo\Tables\WebAgent_TimeLog.sql" />
+    <Build Include="dbo\Tables\LogFxRateIdEmpty.sql" />
+    <Build Include="dbo\Views\ViewWiresAndClientIps.sql" />
+    <Build Include="dbo\Views\ViewWiresToday.sql" />
+    <Build Include="dbo\Views\ViewLast15DayFraude.sql" />
+    <Build Include="dbo\Views\ViewCENPosCardResult.sql" />
+    <Build Include="dbo\Views\ViewCENPosCardResult_OldNov03_2020.sql" />
+    <Build Include="dbo\Functions\fn_IsEvenNumber.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\IsReplWire.sql" />
+    <Build Include="dbo\Functions\GetBuildNo.sql" />
+    <Build Include="dbo\Functions\GetVersion.sql" />
+    <Build Include="dbo\Functions\IsAppSignValid.sql" />
+    <Build Include="dbo\Functions\fn_IsPayerTokenOk.sql" />
+    <Build Include="dbo\Functions\DateOnly.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Functions\fn_IsAgUserPswOk.sql" />
+    <Build Include="dbo\Functions\WebAgent_GetAvailabilityDateToShow.sql" />
+    <Build Include="dbo\Functions\JustNum.sql" />
+    <Build Include="dbo\Functions\fnc_EcoMessage_withLanguage.sql" />
+    <Build Include="dbo\Functions\GetCurrentIP.sql" />
+    <Build Include="dbo\Functions\fn_RemoveAccent.sql" />
+    <Build Include="dbo\Functions\GetReplaceCharForAsciiCode.sql" />
+    <Build Include="dbo\Functions\CleanRecieverNameInfo.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_Validate_with_Presentment.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_CreateAWireTransfer_.sql" />
+    <Build Include="dbo\Stored Procedures\TestLoop.sql" />
+    <Build Include="dbo\Stored Procedures\GetPossibleFraudeRreason.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_Void.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProc_OLdDec06.sql" />
+    <Build Include="dbo\Stored Procedures\SentEmailForWireStoped.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_PayverisPayee_GetDates.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_Create_RcvIdType.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProcCount_ODDEVEN.sql" />
+    <Build Include="dbo\Stored Procedures\GetFaxFileNameWireReceipt.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_WireCreate_Fase3_WhiteLabel_RcvIdType.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProc_ODDEVEN.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_WireInPreparation_Insert_CardDirect.sql" />
+    <Build Include="dbo\Stored Procedures\WireReceiptFaxed.sql" />
+    <Build Include="dbo\Stored Procedures\CheckBridgeTfxWireToSQLMain.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_CreateAWireTransfer_OldDec07.sql" />
+    <Build Include="dbo\Stored Procedures\ArchiveWireTAG.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_WireCreate_Fase3_WhiteLabel_RcvIdType_Gateway.sql" />
+    <Build Include="dbo\Stored Procedures\ArchiveSP_WireLog.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_WIRE_GetCenPosResult.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_UserPaymentMethodInfo_Save_Gateway.sql" />
+    <Build Include="dbo\Stored Procedures\ArchiveSP_ConnLog.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_Create4.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_Create_OptStatus.sql" />
+    <Build Include="dbo\Stored Procedures\ArchiveWiresTAGCompChecked.sql" />
+    <Build Include="dbo\Stored Procedures\ArchiveWiresCFPBLog.sql" />
+    <Build Include="dbo\Stored Procedures\FaxWireReceipt.sql" />
+    <Build Include="dbo\Stored Procedures\CFPB_CalculateWireAvailableDate_DE.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_UserRegistration_WithDataValidResult_WhiteLabel_OldAug12_2020.sql" />
+    <Build Include="dbo\Stored Procedures\CRM_MakeWire_LoyaltyPointsManager.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgentSenderCreateFromConsumerApp.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_CreateAWireTransferToken_1.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_LinkUserAndPreparationId_OldSep02_2020.sql" />
+    <Build Include="dbo\Stored Procedures\WebApi_UpdateUserProfile.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_FraudCheckStatusUpdate_Fase3_OldOct08_2020.sql" />
+    <Build Include="dbo\Stored Procedures\spi_InsWiresComplianceHold.sql" />
+    <Build Include="dbo\Stored Procedures\sps_CheckOFAC.sql">
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\CardDirect_VoidWire_Result.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_Create_Loyalty.sql" />
+    <Build Include="dbo\Stored Procedures\GetCardDirectErrorMessage.sql" />
+    <Build Include="dbo\Stored Procedures\F_spi_CreateWire_DataEntry.sql" />
+    <Build Include="dbo\Stored Procedures\CardDirectPayWithCash_Result.sql" />
+    <Build Include="dbo\Stored Procedures\ViewTransferDE.sql" />
+    <Build Include="dbo\Stored Procedures\VoidCarDirectWiresInLimbo_OldOct21_2020.sql" />
+    <Build Include="dbo\Stored Procedures\SendAlertForToken.sql" />
+    <Build Include="dbo\Stored Procedures\CheckForCarDirectErrors.sql" />
+    <Build Include="dbo\Stored Procedures\CardDirectChargeOk_OldOct21_2020.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_CreateWCF.sql" />
+    <Build Include="dbo\Stored Procedures\CardDirectChargeOk_.sql" />
+    <Build Include="dbo\Stored Procedures\spi_CreateWireTransfer_DataEntry_.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_CreateAWireTransfer_1025WithoutSign_OldOct21_2020.sql" />
+    <Build Include="dbo\Stored Procedures\InsTest.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_CreateAWireTransfer_1025WithoutSign_FXRedesign.sql" />
+    <Build Include="dbo\Stored Procedures\NewSendersReceiversProcessNow.sql" />
+    <Build Include="dbo\Stored Procedures\CardDirect_CenPosResult_GetAuthCode.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProc.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_WIRE_CreateAWireTransfer_V4_OldOct29_2020.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_Create_Loyalty_new.sql" />
+    <Build Include="dbo\Stored Procedures\VerifyToken2.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProc_WebAgent.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_ChangeOfBeneficiaryFinalUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\webagent_FraudCheckReasonCodes_Read.sql" />
+    <Build Include="dbo\Stored Procedures\CardDirectChargeOk_OLD01132021.sql" />
+    <Build Include="dbo\Stored Procedures\InsLOG.sql" />
+    <Build Include="dbo\Stored Procedures\CheckCENPOS_CardChargeStatus.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeMarkWireAsProcessed.sql" />
+    <Build Include="dbo\Stored Procedures\CheckPayleapTransaction.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_VoidPaymentDataEntry.sql" />
+    <Build Include="dbo\Stored Procedures\CD_CheckForDUPWire.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_InstantAchVerification.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetCompExtraInfo.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_SenderId_Save_Fase2.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_UserPaymentMethodInfo_Inactive.sql" />
+    <Build Include="dbo\Stored Procedures\PhoneCallLog_Create.sql" />
+    <Build Include="dbo\Stored Procedures\ProcessDebitCard_.sql" />
+    <Build Include="dbo\Stored Procedures\Card_CenPosResult_Get.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_WireFinalUpdate_withPayerWireExpiration.sql" />
+    <Build Include="dbo\Stored Procedures\sp_VerifySettings.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_Bridge_Geru.sql" />
+    <Build Include="dbo\Stored Procedures\Card_CenPosResult_Create.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProc_WebAgent_fase3.sql" />
+    <Build Include="dbo\Stored Procedures\GetSQL_ServerName.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_CreateAWireTransferToken_OldMar07.sql" />
+    <Build Include="dbo\Stored Procedures\spi_Error_LOG.sql" />
+    <Build Include="dbo\Stored Procedures\spi_CreateWireTransfer_DataEntry_OldMar07.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_FraudCheckStatusUpdate_Fase3_OldApr09.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProc_ODDEVEN_OldApr12.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_PayverisUser_Get_OldApr23_2019.sql" />
+    <Build Include="dbo\Stored Procedures\PaymentDataEntrySearchReceipt.sql" />
+    <Build Include="dbo\Stored Procedures\GetPendingAchAvailableDate.sql" />
+    <Build Include="dbo\Stored Procedures\AvgWiresPerSec.sql" />
+    <Build Include="dbo\Stored Procedures\PossibleFraudeCheck.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_Void_OldApr23_2019.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_Create2.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProc_OLD.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_WireCreate_Fase3.sql" />
+    <Build Include="dbo\Stored Procedures\F_Wires_Create2_new.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_UserPaymentMethodInfo_Save_Fase3_1.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_WIRE_CreateAWireTransfer_V4_OldJun11_2019.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_FraudCheckStatusUpdate_Fase3.sql" />
+    <Build Include="dbo\Stored Procedures\CRM_MakeWire_LoyaltyPointsManager_OldJun11_2019.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_Create_OptStatus_OLD_07-25-19_WV.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_Void_OLD_07-25-19_WV.sql" />
+    <Build Include="dbo\Stored Procedures\CheckCENPOS_CardChargeStatus_.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_GetPendingAchAvailableDate.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_PayverisPayee_Get_OLDJul29_2019.sql" />
+    <Build Include="dbo\Stored Procedures\PayerAcumPopUpLog_Create.sql" />
+    <Build Include="dbo\Stored Procedures\CheckCENPOS_CardChargeStatus_SAVE.sql" />
+    <Build Include="dbo\Stored Procedures\PayerAcumPopUpLog_Update.sql" />
+    <Build Include="dbo\Stored Procedures\ProcessDebitCard_SQLCLR.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProc_WebAgent_fase3_1.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_Void_OLD_08-01-19.sql" />
+    <Build Include="dbo\Stored Procedures\GetSenderIdByWireId.sql" />
+    <Build Include="dbo\Stored Procedures\VoidCarDirectWiresInLimbo.sql" />
+    <Build Include="dbo\Stored Procedures\spi_CreateWireTransfer_DataEntry_TEST.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProc_WebAgent_fase3_3.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_SaveInPreparation_IPDetectedState.sql" />
+    <Build Include="dbo\Stored Procedures\F_spi_CreateWireTransfer_FromExternalApps.sql" />
+    <Build Include="dbo\Stored Procedures\ProcessDebitCard_SQLCLR_OldJun06.sql" />
+    <Build Include="dbo\Stored Procedures\CardDirect_VoidWire_OldJuly18.sql" />
+    <Build Include="dbo\Stored Procedures\WiresCFPBLog_Create.sql" />
+    <Build Include="dbo\Stored Procedures\WiresCFPBLog_Update.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_Create_RcvIdType_1025WithoutSign.sql" />
+    <Build Include="dbo\Stored Procedures\spi_CreateWireTransfer_DataEntry.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_CreateAWireTransfer_1025WithoutSign.sql" />
+    <Build Include="dbo\Stored Procedures\InsQA_OTP.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_UserPaymentMethodInfo_Save_Gateway_WhiteLabel.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_GetConfirmationpageMessageToShow_withKBA_Credit_fase3_3_TranTypeID.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_SaveInPreparation_IPDetectedState_WhiteLabel.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_WireCreate_Fase3_WhiteLabel_RcvIdType_Gateway_OldSep11.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_SaveInPreparation_IPDetectedState_oldSep11.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_GetConfirmationpageMessageToShow_ByPartner.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_UserRegistration_WithDataValidResult.sql" />
+    <Build Include="dbo\Stored Procedures\Card_CenposKioskResults_Create.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_WIRE_CreateAWireTransfer_V4_OldOct22_2019.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProc_CENPOS1025.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_BT_SenderServiceAccounts_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Job_AlerIfCashdirectAppServerIsDoingLessWiresThanAverage.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_BT_SenderServiceAccounts_Update.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProc_CENPOS1025_ImxDirect.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_BT_SenderServiceAccounts_UpdateAccount.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_Create_Payveris_V2.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_Post_OldOct23_2019.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_ValidateAccount.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_PayverisPayee_Get_OldOct31_2019.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_Validate_with_Presentment_OldOct31_2019.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_Create_OptStatus_OldOct31_2019.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_CreateAWireTransfer.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProc_ODDEVEN_OldNov18_2019.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_WireFinalUpdate_withPayerWireExpiration_test.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_Create_OptStatus_OldJan22_2020.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_WIRE_CreateAWireTransfer_V4_OldFeb04_2020.sql" />
+    <Build Include="dbo\Stored Procedures\DataMaintenance_DataEntry.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_WIRE_GetCardDirectWireStatus.sql" />
+    <Build Include="dbo\Stored Procedures\TestIP.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_Sender_Create.sql" />
+    <Build Include="dbo\Stored Procedures\CardDirect_CheckWireIsVoid.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_Sender_SndIdentification_Save_Abbr.sql" />
+    <Build Include="dbo\Stored Procedures\InsWireInfoInWireSearch.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProc_.sql" />
+    <Build Include="dbo\Stored Procedures\CheckCENPOS_CardChargeStatus_OldApr14_2020.sql" />
+    <Build Include="dbo\Stored Procedures\Job0001_WebAgent_CleanPreparations.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_AssignPromoCodeToUser.sql" />
+    <Build Include="dbo\Stored Procedures\F_Wires_Create.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_LinkUserAndPreparationId.sql" />
+    <Build Include="dbo\Stored Procedures\SendFAlert.sql" />
+    <Build Include="dbo\Stored Procedures\ProcessDebitCard.sql" />
+    <Build Include="dbo\Stored Procedures\CardDirectPayWithCash.sql" />
+    <Build Include="dbo\Stored Procedures\CRM_MakeWire_LoyaltyPointsManager_OldJun10_2020.sql" />
+    <Build Include="dbo\Stored Procedures\BanamexWires_Create.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_WireInPreparation_Create.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_WireCreate_Fase3_WhiteLabel_RcvIdType_Gateway_OldJun15_2020.sql" />
+    <Build Include="dbo\Stored Procedures\spi_Sync_Error_LOG.sql" />
+    <Build Include="dbo\Stored Procedures\SyncWatchForError.sql" />
+    <Build Include="dbo\Stored Procedures\spi_Error_LOG2.sql" />
+    <Build Include="dbo\Stored Procedures\CardDirectChargeOk.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_GetConfirmationpageMessageToShow_withKBA_Credit_fase3_3_TranTypeID_KBAFix.sql" />
+    <Build Include="dbo\Stored Procedures\F_Wires_Create_.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProc_ODDEVEN_.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_WireInPreparation_Reset.sql" />
+    <Build Include="dbo\Stored Procedures\F_spi_CreateWireTransfer_FromExternalApps_.sql" />
+    <Build Include="dbo\Stored Procedures\CardDirect_VoidWire.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_WIRE_SearchWires_DataEntry.sql" />
+    <Build Include="dbo\Stored Procedures\PaymentDataEntrySearchReceiptV2.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_WIRE_CreateAWireTransfer_V4.sql" />
+    <Build Include="dbo\Stored Procedures\VerifyToken.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_WIRE_CFPBLogSave_v3.sql" />
+    <Build Include="dbo\Stored Procedures\PaymentDataEntrySearchReceiptV1.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_CreateAWireTransferToken.sql" />
+    <Build Include="dbo\Stored Procedures\CheckCENPOS_CardChargeStatus_OldJan8.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProcCount.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_WIRE_ChangeOfBeneficiary_Replacement.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_UserRegistration_WithDataValidResult_WhiteLabel.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_Create_Aux.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_WireInPreparation_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_Create3_.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_Create_RcvIdType_1025WithoutSign_OldFeb21.sql" />
+    <Build Include="dbo\Stored Procedures\Card_CenposKioskResults_Create_OldJun24_2020.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_Create.sql" />
+    <Build Include="dbo\Stored Procedures\WebAgent_WireCreate_Fase3_WhiteLabel.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_WIRE_CheckMonerisTransaction.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_Create_Payveris.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_WIRE_ChangeOfBeneficiary_Replacement_OldJun23_2020.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_PayverisPayee_Get.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_WireInPreparation_Insert_FXRedesign.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_CreateAWireTransferToken_.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_PayverisUser_Get.sql" />
+    <Build Include="dbo\Stored Procedures\PaymentDataEntrySearchReceiptV2_OldOct18.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_WIRE_CreateAWireTransfer_V4_OldJun24_2020.sql" />
+    <Build Include="dbo\Stored Procedures\BillPayment_Post.sql" />
+    <Build Include="dbo\Stored Procedures\spi_FaxWireReceipt.sql" />
+    <Build Include="dbo\Stored Procedures\PaymentDataEntrySearchReceiptV3.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_Sender_SndIdentification_Save_V2.sql" />
+    <Build Include="dbo\Tables\WebAgent_WireInPreparation_FeesDetail.sql" />
+    <Build Include="dbo\Stored Procedures\WebApi_WireCreate.sql" />
+    <Build Include="dbo\Stored Procedures\WebApi_UserRegistration_WithDataValidResult_WhiteLabel.sql" />
+    <Build Include="dbo\Stored Procedures\WebApi_UserPaymentMethodInfo_Save_Gateway_WhiteLabel.sql" />
+    <Build Include="dbo\Stored Procedures\WebApi_UpdateWireInPreparation.sql" />
+    <Build Include="dbo\Stored Procedures\WebApi_SenderId_Save_Fase2.sql" />
+    <Build Include="dbo\Stored Procedures\WebApi_GetWireInPreparation.sql" />
+    <Build Include="dbo\Functions\CleanWhiteSpaces.sql" />
+    <Build Include="dbo\Stored Procedures\WebApi_WireCreate_Fase3_WhiteLabel_RcvIdType_Gateway.sql" />
+    <Build Include="dbo\Stored Procedures\WebApi_UserRegistration_WithDataValidResult_WhiteLabel_v2.sql" />
+    <Build Include="dbo\Stored Procedures\WebApi_SaveWire.sql" />
+    <Build Include="dbo\Stored Procedures\WebApi_WireFinalUpdate_withPayerWireExpiration.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_WIRE_ModifyPayerLocation_Replacement.sql" />
+    <Build Include="dbo\Stored Procedures\CD_Wire_Replacement.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProc_FxRedesign.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProc_ODDEVEN_FXRedesign.sql" />
+    <Build Include="dbo\Stored Procedures\BillPaymentCFP_Void.sql" />
+    <Build Include="dbo\Stored Procedures\BillPaymentCFP_Post.sql" />
+    <Build Include="dbo\Views\ViewGeoLocation_1.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_Create_RcvIdType_1025WithoutSign_FXRedesign.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProc_ODDEVEN_FXRedesign.sql" />
+    <Build Include="dbo\Stored Procedures\BridgeGetWiresToProc_FxRedesign.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_CreateAWireTransfer_1025WithoutSign_FXRedesign_V2.sql" />
+    <Build Include="dbo\Stored Procedures\Bridge_GetWire_ByPinNumber.sql" />
+    <Build Include="dbo\Stored Procedures\Bridge_GetFinalUpdateData.sql" />
+    <Build Include="dbo\Stored Procedures\Bridge_Create_CumulativeSummaryAmountsToday_DestCurrency.sql" />
+    <Build Include="dbo\Tables\WiresPurposes.sql" />
+    <Build Include="dbo\Tables\Partners_WireInPreparation.sql" />
+    <Build Include="dbo\Stored Procedures\PartnersWire_Confirm.sql" />
+    <Build Include="dbo\Stored Procedures\Partner_WireRelease.sql" />
+    <Build Include="dbo\Stored Procedures\Partners_CreateWireInPreparation.sql" />
+    <Build Include="dbo\Tables\ReceiverPartner.sql" />
+    <Build Include="dbo\Tables\SenderPartner.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_Validate_Sender.sql" />
+    <Build Include="dbo\Stored Procedures\Wires_Validate_Receiver.sql" />
+    <Build Include="dbo\Stored Procedures\ImxDirect_Receiver_Create.sql" />
+    <Build Include="dbo\Stored Procedures\PartnersWire_Validate_RequiredFields.sql" />
+    <Build Include="dbo\Tables\Partners_WireInPreparation_Branches.sql" />
+    <Build Include="dbo\Stored Procedures\Partner_WireComplianceAdditionalInfo.sql" />
+    <Build Include="dbo\Stored Procedures\Partners_CancellationWire.sql" />
+    <Build Include="dbo\Stored Procedures\GetSenderGroupIdBySenderPartnerId.sql" />
+  </ItemGroup>
+</Project>

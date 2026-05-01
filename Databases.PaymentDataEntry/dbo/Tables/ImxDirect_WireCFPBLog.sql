@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[ImxDirect_WireCFPBLog] (
+    [CFPBLogId]               INT              IDENTITY (1, 1) NOT NULL,
+    [PreparationId]           UNIQUEIDENTIFIER NOT NULL,
+    [SenderId]                INT              NULL,
+    [ReceiverId]              INT              NULL,
+    [WireDatetime]            DATETIME         NULL,
+    [AmountToBeTransferred]   MONEY            NULL,
+    [FrontEndFee]             MONEY            NULL,
+    [Taxes]                   MONEY            NULL,
+    [ExchangeRate]            MONEY            NULL,
+    [BackEndFeeTaxes]         MONEY            NULL,
+    [TotalAmountToBeReceived] MONEY            NULL,
+    [AgPayerCode]             CHAR (10)        NULL,
+    [AgSenderCode]            CHAR (10)        NULL,
+    [BranchId]                INT              NULL,
+    [AgentName]               VARCHAR (50)     NULL,
+    [SenderName]              VARCHAR (150)    NULL,
+    [AgSenderSeq]             INT              CONSTRAINT [DF_ImxDirect_WireCFPBLog_AgSenderSeq] DEFAULT ((0)) NULL,
+    [Action]                  CHAR (10)        NULL,
+    [UserName]                VARCHAR (15)     NULL,
+    [Created]                 DATETIME         CONSTRAINT [DF_ImxDirect_WireCFPBLog_Created] DEFAULT (getdate()) NULL,
+    [WireId]                  INT              CONSTRAINT [DF_ImxDirect_WireCFPBLog_WireId] DEFAULT ((0)) NULL,
+    [OriCurrencyCode]         VARCHAR (3)      NULL,
+    [DestCurrencyCode]        VARCHAR (3)      NULL,
+    PRIMARY KEY CLUSTERED ([CFPBLogId] ASC)
+);
+
