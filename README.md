@@ -27,9 +27,6 @@ Proyecto **SQL Server Database** con **SQL Server Data Tools (SSDT)**: esquema `
 
 Los scripts pueden referenciar **otras bases** del mismo ecosistema (por ejemplo catálogos o transacciones en otras bases con nombre de tres partes). Revisa y adapta esas referencias si despliegas en un entorno aislado o de demostración.
 
-## Convención de nombres
-
-En el código versionado, el nombre de catálogo usado en sentencias de tres partes es **`PaymentDataEntry`** (antes alineado con un nombre histórico de “data entry”). Los objetos renombrados en el repo incluyen, entre otros, procedimientos como **`WebAgent_VoidPaymentDataEntry`** y la familia **`PaymentDataEntrySearchReceipt`**.
 
 ## Contribución
 
